@@ -14,7 +14,8 @@ import {
   ChangePassword,
   ThankYou,
   OrderHistory,
-  CheckOut
+  CheckOut,
+  Policy
 } from "./pages";
 import { landingLoader } from "./pages/Landing";
 import { singleProductLoader } from "./pages/SingleProduct";
@@ -22,6 +23,8 @@ import { shopLoader } from "./pages/Shop";
 import { ToastContainer } from "react-toastify";
 import { wishListLoader } from "./pages/Wishlist";
 import { orderHistoryLoader } from "./pages/OrderHistory";
+// import { Policy } from "./pages/Policy";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "policy",
+        element: <Policy />,
       },
       {
         path: "login",
