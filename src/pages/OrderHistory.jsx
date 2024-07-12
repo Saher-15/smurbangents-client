@@ -29,18 +29,18 @@ const OrderHistory = () => {
 
   return (
     <>
-      <SectionTitle title="Order History" path="Home | Order History" />
+      <SectionTitle title="היסטוריית הזמנות" path="בית | היסטוריית הזמנות" />
       <div className="order-history-main max-w-7xl mx-auto mt-10 px-20 max-md:px-10">
         {orders?.length === 0 ? (
           <div className="text-center">
             <h1 className="text-4xl text-accent-content">
-              There are no orders in the order history
+              אין הזמנות בהיסטוריית ההזמנות
             </h1>
             <Link
               to="/shop?stock=true"
               className="btn bg-blue-600 hover:bg-blue-500 text-white mt-10"
             >
-              Make your first order
+              בצע את ההזמנה הראשונה שלך
             </Link>
           </div>
         ) : (
@@ -52,7 +52,7 @@ const OrderHistory = () => {
               >
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title text-xl font-medium text-accent-content">
-                  Order {order._id} - {order.orderStatus}
+                  {order._id} - {order.orderStatus}
                 </div>
                 <div className="collapse-content">
                   <div className="overflow-x-auto">
@@ -60,11 +60,11 @@ const OrderHistory = () => {
                       {/* head */}
                       <thead>
                         <tr className="text-accent-content">
-                          <th>Order</th>
-                          <th>Image</th>
-                          <th>Name</th>
-                          <th>Size</th>
-                          <th>Price</th>
+                          <th>הזמנה</th>
+                          <th>תמונה</th>
+                          <th>שם</th>
+                          <th>מידה</th>
+                          <th>מחיר</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -79,21 +79,21 @@ const OrderHistory = () => {
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h4 className="text-md text-accent-content">
-                              Subtotal: ₪{Math.round(order?.subtotal)}
+                              סכום ₪{Math.round(order?.subtotal)}
                             </h4>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-md text-accent-content">
-                              Shipping ₪{order?.shippingCost}
+                              משלוח  ₪{order?.shippingCost}
                             </h3>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-xl text-accent-content">
-                              - Order Total: ₪{Math.round(order?.subtotal + order?.shippingCost)} -
+                              - סה"כ הזמנה : ₪{Math.round(order?.subtotal + order?.shippingCost)} -
                             </h3>
                           </td>
                         </tr>

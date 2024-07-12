@@ -21,22 +21,22 @@ const Herooo = () => {
                 </div>
                 <div className="flex items-center justify-center flex-1">
                     <div className="max-w-xl text-center">
-                        <h1 className="text-6xl font-bold max-md:text-4xl text-accent-content">Jeans</h1>
+                        <h1 className="text-6xl font-bold max-md:text-4xl text-accent-content">גינס</h1>
                         <p className="py-6 text-2xl max-md:text-lg text-accent-content">
                             חולצות הטי שכולם רוצים בקיץ!
                         </p>
-                        <Link to="/shop?stock=true&category=T-Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
+                        <Link to="/shop?stock=true&category=T-Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">קנה עכשיו</Link>
                     </div>
                 </div>
                 <div className="heroo3-content text-center">
                 </div>
                 <div className="flex items-center justify-center flex-1">
                     <div className="max-w-xl text-center">
-                        <h1 className="text-6xl font-bold max-md:text-4xl text-accent-content">Pants</h1>
+                        <h1 className="text-6xl font-bold max-md:text-4xl text-accent-content">מכנסיים</h1>
                         <p className="py-6 text-2xl max-md:text-lg text-accent-content">
                             חולצות הטי שכולם רוצים בקיץ!
                         </p>
-                        <Link to="/shop?stock=true&category=Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
+                        <Link to="/shop?stock=true&category=Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">קנה עכשיו</Link>
                     </div>
                 </div>
             </div>

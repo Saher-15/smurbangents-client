@@ -23,11 +23,7 @@ const CartItem = ({ cartItem }) => {
       {/* INFO */}
       <div className="sm:ml-16 sm:w-48">
         {/* TITLE */}
-        <h3 className="capitalize font-medium text-accent-content">{name}</h3>
-
-        <h4 className="mt-2 capitalize text-sm text-accent-content">
-          Size: {selectedSize}
-        </h4>
+        <h3 className="capitalize font-medium text-accent-content">{name}-({selectedSize})</h3>
       </div>
       <div className="sm:ml-12">
         {/* REMOVE */}
@@ -36,7 +32,7 @@ const CartItem = ({ cartItem }) => {
           onClick={() => dispatch(removeItem(id))}
         >
           <FaHeartCrack />
-          remove
+          מחיקה
         </button>
       </div>
 

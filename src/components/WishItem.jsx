@@ -33,7 +33,7 @@ const WishItem = ({ item, counter, removeFromWishlist }) => {
       <td className="text-accent-content">
         <button className="btn btn-xs btn-error text-sm" onClick={handleRemoveClick}>
           <FaHeartCrack />
-          Remove
+          מחיקה
         </button>
       </td>
     </tr>

@@ -10,7 +10,7 @@ const CheckOut = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { total, shipping } = useSelector((state) => state.cart);
-    const [window_, setWindow_] = useState();
+    const [paymentWindow, setPaymentWindow] = useState(null);
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -22,42 +22,57 @@ const CheckOut = () => {
         street: ''
     });
 
+    const [agreedToPolicy, setAgreedToPolicy] = useState(false);
+    const [errors, setErrors] = useState({});
+
     useEffect(() => {
-        if (window_) {
-            console.log(window_.closed);
+        if (paymentWindow && paymentWindow.closed) {
+            clearInterval(windowCheckInterval);
         }
-    }, [window_]);
+    }, [paymentWindow]);
 
-    async function createPaymentGrowApi() {
-        const response = await axios.post(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/payment/createPayment`, {
-            fullName: formData.firstName + " " + formData.lastName,
-            phone: formData.phoneNumber,
-            email: formData.email,
-            sum: total*0.9 + shipping
-        });
-        toast.error(response.data.err.message);
-        const paymentWindow = window.open(response.data.data.url);
-        setWindow_(paymentWindow);
+    const createPaymentGrowApi = async () => {
+        try {
+            const response = await axios.post(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/payment/createPayment`, {
+                fullName: formData.firstName + " " + formData.lastName,
+                phone: formData.phoneNumber,
+                email: formData.email,
+                sum: total * 0.9 + shipping
+            });
 
-        const checkWindowClosed = setInterval(() => {
-            if (paymentWindow.closed) {
-                clearInterval(checkWindowClosed);
-                handlePaymentWindowClosed(response.data.data.processId, response.data.data.processToken);
+            if (response.data.err) {
+                toast.error(response.data.err.message);
+                return;
             }
-        }, 1000);
-    }
 
-    const handlePaymentWindowClosed = async (proId, proTok) => {
+            const paymentUrl = response.data.data.url;
+            const processId = response.data.data.processId;
+            const processToken = response.data.data.processToken;
 
+            const newWindow = window.open(paymentUrl);
+            setPaymentWindow(newWindow);
+
+            const windowCheckInterval = setInterval(() => {
+                if (newWindow.closed) {
+                    clearInterval(windowCheckInterval);
+                    handlePaymentWindowClosed(processId, processToken);
+                }
+            }, 1000);
+        } catch (error) {
+            toast.error('Error creating payment. Please try again.');
+        }
+    };
+
+    const handlePaymentWindowClosed = async (processId, processToken) => {
         try {
             const response = await axios.get(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/payment/status`, {
-                params:{
-                    processId: proId,
-                    processToken: proTok
+                params: {
+                    processId,
+                    processToken
                 }
-
             });
-            if (response.data == true) {
+
+            if (response.data === true) {
                 navigate(`/thank-you?firstName=${formData.firstName}&lastName=${formData.lastName}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&city=${formData.city}&street=${formData.street}`);
             } else {
                 toast.error('Payment failed. Please try again.');
@@ -65,9 +80,7 @@ const CheckOut = () => {
         } catch (error) {
             toast.error('Error checking payment status. Please try again.');
         }
-    }
-
-    const [errors, setErrors] = useState({});
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -80,14 +93,44 @@ const CheckOut = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { firstName, lastName, email, confirmEmail, phoneNumber, city, street } = formData;
+
         if (!firstName || !lastName || !email || !confirmEmail || !phoneNumber || !city || !street) {
             toast.error("Please fill in all fields");
             return;
         }
-        if (formData.email !== formData.confirmEmail) {
+
+        if (email !== confirmEmail) {
             toast.error("Emails do not match");
+            return;
+        }
+
+        if (!agreedToPolicy) {
+            toast.error("You must agree to the privacy policy");
+            return;
+        }
+
+        createPaymentGrowApi();
+    };
+
+    const isFormInvalid = !formData.firstName ||
+        !formData.lastName ||
+        !formData.email ||
+        !formData.confirmEmail ||
+        !formData.phoneNumber ||
+        !formData.city ||
+        !formData.street ||
+        formData.email !== formData.confirmEmail ||
+        !agreedToPolicy;
+
+    const getButtonText = () => {
+        if (!formData.firstName || !formData.lastName || !formData.email || !formData.confirmEmail || !formData.phoneNumber || !formData.city || !formData.street) {
+            return 'Please fill in all fields';
+        } else if (formData.email !== formData.confirmEmail) {
+            return 'Emails do not match';
+        } else if (!agreedToPolicy) {
+            return 'Accept the policy';
         } else {
-            setErrors({});
+            return 'Complete Purchase';
         }
     };
 
@@ -239,24 +282,27 @@ const CheckOut = () => {
                         </div>
                     </div>
                     <div className="mt-10">
+                        <div className="flex items-center mb-4">
+                            <input
+                                type="checkbox"
+                                id="agree-to-policy"
+                                className="mr-2"
+                                checked={agreedToPolicy}
+                                onChange={(e) => setAgreedToPolicy(e.target.checked)}
+                            />
+                            <label htmlFor="agree-to-policy" className="text-sm">
+                                I agree to the <button className="text-blue-600 underline" onClick={() => navigate('/policy')}>Privacy Policy</button>
+                            </label>
+                        </div>
                         <button
                             type="submit"
-                            className={`block w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${(!formData.firstName || !formData.lastName || !formData.email || !formData.confirmEmail || !formData.phoneNumber || !formData.city || !formData.street || formData.email !== formData.confirmEmail) ? 'opacity-50 cursor-not-allowed bg-red-600 hover:bg-red-500' : ''}`}
-                            onClick={createPaymentGrowApi}
-                            disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.confirmEmail || !formData.phoneNumber || !formData.city || !formData.street || formData.email !== formData.confirmEmail}
-
+                            className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm 
+                                ${isFormInvalid ? 'bg-red-600 hover:bg-red-500 opacity-50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'}
+                                focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+                            disabled={isFormInvalid}
                         >
-
-                            {!formData.firstName || !formData.lastName || !formData.email || !formData.confirmEmail || !formData.phoneNumber || !formData.city || !formData.street ? (
-                                'Please fill in all fields'
-                            ) : (
-                                formData.email !== formData.confirmEmail ? 'Emails do not match' : 'Complete Purchase'
-
-                            )}
+                            {getButtonText()}
                         </button>
-
-
-
                     </div>
                 </Form>
             </div>

@@ -7,6 +7,7 @@ const Heroo = () => {
 
             {/* <div className="hero bg-base-350 bg-blend-overlay">
             <div className="hero-content text-center"> */}
+            {/* <div className="heroo bg-base-350 bg-blend-overlay flex items-center justify-center w-1/3 "> */}
 
             <div className="flex space-x-4 ">
                 <div className="heroo bg-base-350 bg-blend-overlay flex-1">
@@ -28,7 +29,7 @@ const Heroo = () => {
                         <p className="py-6 text-2xl max-md:text-lg text-accent-content">
                             חולצות הטי שכולם רוצים בקיץ!
                         </p>
-                        <Link to="/shop?stock=true&category=T-Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
+                        <Link to="/shop?stock=true&category=T-Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">קנה עכשיו</Link>
                     </div>
                 </div>
                 <div className="heroo1-content text-center">
@@ -39,7 +40,7 @@ const Heroo = () => {
                         <p className="py-6 text-2xl max-md:text-lg text-accent-content">
                             חולצות הטי שכולם רוצים בקיץ!
                         </p>
-                        <Link to="/shop?stock=true&category=Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
+                        <Link to="/shop?stock=true&category=Shirts" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">קנה עכשיו</Link>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ const Cart = () => {
     if (selectedOption === 'pickup') {
       dispatch(setShipping(0));
     } else if (selectedOption === 'other_area') {
-      dispatch(setShipping(40));
+      dispatch(setShipping(30));
     } else {
       dispatch(setShipping(50));
     }
@@ -37,7 +37,7 @@ const Cart = () => {
 
   return (
     <>
-      <SectionTitle title="Cart" path="Home | Cart" />
+      <SectionTitle title="עגלה" path="בית | עגלה" />
       <div className='mt-8 grid gap-8 lg:grid-cols-12 max-w-7xl mx-auto px-10'>
         <div className='lg:col-span-8'>
           <CartItemsList />
@@ -57,7 +57,7 @@ const Cart = () => {
                   value="pickup"
                   onChange={handleDeliveryOptionChange}
                 />
-                <label htmlFor="pickup" className="ml-2">Pick up from store</label>
+                <label htmlFor="pickup" className="ml-2">Pick up from store +0</label>
               </div>
               <div className="mb-4">
                 <input
@@ -67,27 +67,17 @@ const Cart = () => {
                   value="other_area"
                   onChange={handleDeliveryOptionChange}
                 />
-                <label htmlFor="other_area" className="ml-2">Shipping to all the country areas +40</label>
-              </div>
-              <div className="mb-4">
-                <input
-                  type="radio"
-                  id="jerusalem"
-                  name="deliveryOption"
-                  value="jerusalem"
-                  onChange={handleDeliveryOptionChange}
-                />
-                <label htmlFor="jerusalem" className="ml-2">Shipping to Jerusalem and west bank +50</label>
+                <label htmlFor="other_area" className="ml-2">With shipping +30</label>
               </div>
             </div>
           </div>
           {loginState ? (
             <button onClick={isCartEmpty} className='btn bg-blue-600 hover:bg-blue-500 text-white btn-block mt-8'>
-              Order Now
+              הזמן עכשיו
             </button>
           ) : (
             <Link to='/login' className='btn bg-blue-600 hover:bg-blue-500 btn-block text-white mt-8'>
-              Please Login
+              התחבר
             </Link>
           )}
         </div>

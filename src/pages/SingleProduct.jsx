@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   SectionTitle,
   SelectSize,
+  Heroo,
 } from "../components";
 import { FaHeart } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
@@ -126,8 +127,8 @@ const SingleProduct = () => {
 
   return (
     <>
-      <SectionTitle title="Product page" path="Home | Shop | Product page" />
-      <div className="grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
+      <SectionTitle title="דף מוצר" path="בית | חנות | דף מוצר" />
+      <div className="topbar border-b border-gray-800 grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
         <div className="product-images flex flex-col justify-center max-lg:justify-start">
           <img
             src={`${productData?.additionalImageUrls[currentImage]}`}
@@ -157,7 +158,7 @@ const SingleProduct = () => {
           </p>
           {productData?.discount < 1 && (
             <p className="text-3xl text-error">
-            ₪{(productData?.discount * productData?.price)?.toFixed(2) || '0.00'}
+              ₪{(productData?.discount * productData?.price)?.toFixed(2) || '0.00'}
             </p>
           )}
           <div className="text-xl max-sm:text-lg text-accent-content">
@@ -165,7 +166,7 @@ const SingleProduct = () => {
           </div>
           <div className="text-2xl">
             <SelectSize
-              sizeList={["Pick your size", ...productData?.availableSizes]}
+              sizeList={["בחר את המידה שלך", ...productData?.availableSizes]}
               size={size}
               setSize={setSize}
             />
@@ -178,9 +179,9 @@ const SingleProduct = () => {
             >
               <FaCartShopping className="text-xl mr-1" />
               {!productData?.isInStock ? (
-                'Out of stock'
+                'אזל מהמלאי'
               ) : (
-                isInCart ? 'Remove from cart' : 'Add to cart'
+                isInCart ? 'הסרה מעגלה' : 'הוסף לעגלה'
               )}
             </button>
 
@@ -198,7 +199,7 @@ const SingleProduct = () => {
                 }}
               >
                 <FaHeart className="text-xl mr-1" />
-                Remove from wishlist
+                הסרה מסל העדיפויות
               </button>
             ) : (
               <button
@@ -214,7 +215,8 @@ const SingleProduct = () => {
                 }}
               >
                 <FaHeart className="text-xl mr-1" />
-                Add to wishlist
+                הוסף לסל העדיפויות
+
               </button>
             )}
           </div>
@@ -226,11 +228,11 @@ const SingleProduct = () => {
                   : "badge bg-gray-500 badge-lg font-bold text-white p-5 mt-2"
               }
             >
-              In Stock: {productData?.isInStock ? "Yes" : "No"}
+              במלאי : {productData?.isInStock ? "כן" : "לא"}
             </div>
 
             <div className="badge bg-gray-500 badge-lg font-bold text-white p-5 mt-2">
-              Category: {productData?.category}
+              קטגוריה : {productData?.category}
             </div>
           </div>
         </div>

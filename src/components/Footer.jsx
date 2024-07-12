@@ -23,13 +23,13 @@ const Footer = () => {
 
       <nav className="grid grid-flow-col max-sm:grid-flow-row gap-4">
         <Link to="/" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
-          Home
+          בית
         </Link>
         <Link to="/shop?stock=true" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content">
-          Shop
+          חנות
         </Link>
         <Link to="/about" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
-          About us
+          אודות
         </Link>
         {!loginState && (
           <>
@@ -38,14 +38,14 @@ const Footer = () => {
               className="text-white link link-hover text-2xl max-md:text-xl text-accent-content"
               onClick={() => window.scrollTo(0, 0)}
             >
-              Login
+              כניסה
             </Link>
             <Link
               to="/register"
               className="text-white link link-hover text-2xl max-md:text-xl text-accent-content"
               onClick={() => window.scrollTo(0, 0)}
             >
-              Register
+              הרשמה
             </Link>
           </>
         )}
@@ -75,7 +75,7 @@ const Footer = () => {
           <li>
             <FaRegEnvelope className="text-white text-2xl max-sm:text-lg text-accent-content" />{" "}
             <span className="text-white text-2xl max-sm:text-lg text-accent-content">
-              email@gmail.com
+              urbangents.fashion@gmail.com
             </span>
           </li>
         </ul>

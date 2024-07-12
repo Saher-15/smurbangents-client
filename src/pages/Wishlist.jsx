@@ -26,16 +26,16 @@ const Wishlist = () => {
 
   return (
     <>
-      <SectionTitle title="Wishlist" path="Home | Wishlist" />
+      <SectionTitle title="סל העדיפויות" path="בית | סל העדיפויות" />
       <div className="max-w-7xl mx-auto">
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
               <tr>
                 <th></th>
-                <th className="text-accent-content">Name</th>
-                <th className="text-accent-content">Image</th>
-                <th className="text-accent-content">Action</th>
+                <th className="text-accent-content">שם</th>
+                <th className="text-accent-content">תמונה</th>
+                <th className="text-accent-content">פעולה</th>
               </tr>
             </thead>
             <tbody>

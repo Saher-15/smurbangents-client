@@ -34,7 +34,7 @@ const ChangePassword = () => {
                 toast.error("New password and confirmation password do not match");
                 return;
             }
-    
+
             // Create an object with only oldPassword and newPassword
             const requestData = {
                 oldPassword: userFormData.oldPassword,
@@ -55,17 +55,17 @@ const ChangePassword = () => {
             toast.error("Failed to change password");
         }
     };
-    
+
 
     return (
         <>
-            <SectionTitle title="Change Password" path="Home | Change Password" />
+            <SectionTitle title="שינוי סיסמה" path="בית | שינוי סיסמה" />
             <form className="max-w-7xl mx-auto text-center px-10" onSubmit={updateProfile}>
                 <div className="grid grid-cols-3 max-lg:grid-cols-1">
                     {/* Add fields for old password, new password, and confirmation password */}
                     <div className="form-control w-full lg:max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Old Password</span>
+                        <label className="label justify-end">
+                            <span className="label-text">סיסמה ישנה</span>
                         </label>
                         <input
                             type="password"
@@ -77,8 +77,8 @@ const ChangePassword = () => {
                     </div>
 
                     <div className="form-control w-full lg:max-w-xs">
-                        <label className="label">
-                            <span className="label-text">New Password</span>
+                        <label className="label justify-end">
+                            <span className="label-text">סיסמה חדשה</span>
                         </label>
                         <input
                             type="password"
@@ -90,8 +90,8 @@ const ChangePassword = () => {
                     </div>
 
                     <div className="form-control w-full lg:max-w-xs">
-                        <label className="label">
-                            <span className="label-text">Confirm Password</span>
+                        <label className="label justify-end">
+                            <span className="label-text">אמת סיסמה</span>
                         </label>
                         <input
                             type="password"
@@ -106,7 +106,7 @@ const ChangePassword = () => {
                     className="btn btn-lg bg-blue-600 hover:bg-blue-500 text-white mt-10"
                     onClick={updateProfile}
                 >
-                    Change Password
+                    שינוי סיסמה
                 </button>
 
             </form>

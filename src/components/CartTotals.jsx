@@ -15,7 +15,7 @@ const CartTotals = () => {
     if (selectedOption === 'pickUpFromStore') {
       dispatch(setShipping(0));
     } else if (selectedOption === 'nazareth') {
-      dispatch(setShipping(40));
+      dispatch(setShipping(30));
     }
     else dispatch(setShipping(50));;
   };
@@ -25,22 +25,21 @@ const CartTotals = () => {
       <div className='card-body'>
         {/* SUBTOTAL */}
         <p className='subtotal-text'>
-          <span>Subtotal</span>
           <span className='font-medium'>₪{Math.round(total)}</span>
+          <span>סכום</span>
+
         </p>
         <p className='subtotal-text'>
-          <span>Total after 10% discount</span>
-          <span className='font-medium'>₪{Math.round(total * 0.9)}</span>
-        </p>
-        <p className='subtotal-text'>
-          <span>Shipping</span>
           <span className='font-medium'>₪{shipping}</span>
+          <span>משלוח</span>
+
         </p>
         {/* Order Total */}
-        <p className='order-total-text'>
-          <span>Order Total</span>
-          <span className='font-medium'>₪{Math.round(total * 0.9) + shipping}</span>
+        <p className='order-total-text flex justify-between'>
+          <span className='font-medium'>₪{Math.round(total) + shipping}</span>
+          <span>סה"כ הזמנה</span>
         </p>
+
       </div>
     </div>
   );

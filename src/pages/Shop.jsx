@@ -85,7 +85,7 @@ const Shop = () => {
 
   return (
     <>
-      <SectionTitle title="Shop" path="Home | Shop" />
+      <SectionTitle title="חנות" path="בית | חנות" />
       <div className="max-w-7xl mx-auto mt-5">
         <Filters />
         {productLoaderData.productsData.length === 0 && <h2 className="text-accent-content text-center text-4xl my-10">No products found for this filter</h2>}

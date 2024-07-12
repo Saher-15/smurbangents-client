@@ -20,11 +20,11 @@ const Landing = () => {
   return (
     <main>
       <Hero />
-      <Heroo/>
+      <Heroo />
 
       <div className="selected-products topbar border-b border-gray-800">
         <h2 className="text-6xl text-center my-12 max-md:text-4xl text-accent-content">
-          Trending Now
+          פופולרי כעת
         </h2>
         <div className="selected-products-grid max-w-7xl mx-auto">
           {products.map((product) => (
@@ -50,7 +50,7 @@ const Landing = () => {
           ))}
         </div>
       </div>
-      <Herooo/>
+      <Herooo />
     </main>
   );
 };

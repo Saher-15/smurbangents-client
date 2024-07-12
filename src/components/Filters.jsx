@@ -8,22 +8,13 @@ import FormCheckbox from "./FormCheckbox";
 const Filters = () => {
   const [selectCategoryList, setSelectCategoryList] = useState([
     "all",
-    "Shoes",
-    "T-Shirts",
-    "Jackets",
-    "Shorts",
-    "Sweaters",
-    "Shirts",
     "Jeans",
-    "Vests",
-    "Belts",
-    "Dress",
-    "Scirts",
+    "Jackets",
     "Pants",
-    "Blouses",
-    "Suits",
-    "Overalls",
-    "Blazers"
+    "Shorts",
+    "Shirts",
+    "Scirts",
+    "T-Shirts",
   ]);
 
   return (
@@ -69,7 +60,7 @@ const Filters = () => {
       >
         search
       </button>
-      <Link to="/shop?stock=true" className="btn btn-primary btn-sm">
+      <Link to="/shop?stock=true" className="btn bg-blue-600 hover:bg-blue-500 text-white btn-sm">
         reset
       </Link>
     </Form>
