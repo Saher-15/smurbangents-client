@@ -8,7 +8,7 @@
 }
 
 .heroo{
-    height: 600px;
+    height: 500px;
     background-image: url("../assets/t-shirt.jpg");
     background-size: cover;
     background-position: center;
@@ -17,7 +17,7 @@
 }
 
 .heroo1{
-    height: 600px;
+    height: 500px;
     background-image: url("../assets/polo.jpg");
     background-size: cover;
     background-position: center;
@@ -26,7 +26,7 @@
 }
 
 .heroo2{
-    height: 600px;
+    height: 500px;
     background-image: url("../assets/jeans.jpg");
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@
 }
 
 .heroo3{
-    height: 600px;
+    height: 500px;
     background-image: url("../assets/pants.jpeg");
     background-size: cover;
     background-position: center;
