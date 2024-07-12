@@ -222,14 +222,14 @@ const SingleProduct = () => {
             <div
               className={
                 productData?.isInStock
-                  ? "badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2"
-                  : "badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2"
+                  ? "badge bg-gray-500 badge-lg font-bold text-white p-5 mt-2"
+                  : "badge bg-gray-500 badge-lg font-bold text-white p-5 mt-2"
               }
             >
               In Stock: {productData?.isInStock ? "Yes" : "No"}
             </div>
 
-            <div className="badge bg-gray-700 badge-lg font-bold text-white p-5 mt-2">
+            <div className="badge bg-gray-500 badge-lg font-bold text-white p-5 mt-2">
               Category: {productData?.category}
             </div>
           </div>

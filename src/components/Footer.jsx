@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa6";
 import { TbBrandGoogleMaps } from "react-icons/tb";
 import { useSelector } from "react-redux";
-
+import { FaHeadphones } from "react-icons/fa6";
+import { FaRegEnvelope } from "react-icons/fa6";
+import "../styles/Footer.css";
 const Footer = () => {
 
   const handleClickInsta = () => {
@@ -17,29 +19,30 @@ const Footer = () => {
   const loginState = useSelector((state) => state.auth.isLoggedIn);
 
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-10 max-md:px-0">
+    <footer className="footer footer-center p-10 bg-base-00 text-base-content rounded mt-10 max-md:px-0 ">
+
       <nav className="grid grid-flow-col max-sm:grid-flow-row gap-4">
-        <Link to="/" className="link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
           Home
         </Link>
-        <Link to="/shop?stock=true" className="link link-hover text-2xl max-md:text-xl text-accent-content">
+        <Link to="/shop?stock=true" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content">
           Shop
         </Link>
-        <Link to="/about" className="link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/about" className="text-white link link-hover text-2xl max-md:text-xl text-accent-content" onClick={() => window.scrollTo(0, 0)}>
           About us
         </Link>
         {!loginState && (
           <>
             <Link
               to="/login"
-              className="link link-hover text-2xl max-md:text-xl text-accent-content"
+              className="text-white link link-hover text-2xl max-md:text-xl text-accent-content"
               onClick={() => window.scrollTo(0, 0)}
             >
               Login
             </Link>
             <Link
               to="/register"
-              className="link link-hover text-2xl max-md:text-xl text-accent-content"
+              className="text-white link link-hover text-2xl max-md:text-xl text-accent-content"
               onClick={() => window.scrollTo(0, 0)}
             >
               Register
@@ -47,7 +50,8 @@ const Footer = () => {
           </>
         )}
       </nav>
-      <nav>
+
+      {/* <nav>
         <div className="grid grid-flow-col gap-4">
           <FaInstagram
             className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer hover:text-blue-500"
@@ -58,12 +62,27 @@ const Footer = () => {
             onClick={handleClickMap}
           />
         </div>
-      </nav>
+      </nav> */}
 
-
+      <div className="topbar border-b border-gray-800">
+        <ul>
+          <li>
+            <FaHeadphones className="text-white text-2xl max-sm:text-lg text-accent-content" />
+            <span className="text-white text-2xl max-sm:text-lg text-accent-content">
+              +972 504368748
+            </span>
+          </li>
+          <li>
+            <FaRegEnvelope className="text-white text-2xl max-sm:text-lg text-accent-content" />{" "}
+            <span className="text-white text-2xl max-sm:text-lg text-accent-content">
+              email@gmail.com
+            </span>
+          </li>
+        </ul>
+      </div>
       <aside>
-        <p className="text-2xl max-sm:text-sm text-accent-content">
-          Copyright © 2024 - All right reserved by SiwaraFashion<br/>Created by Saher Saadi
+        <p className="text-white text-2xl max-sm:text-sm text-accent-content">
+          Copyright © 2024 - All right reserved by UrbanGents<br />Created by Saher Saadi
         </p>
       </aside>
     </footer>

@@ -1,0 +1,7 @@
+.footer {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust as needed to ensure it overlays other content properly */
+    background-color: #434343; /* Example background color */
+    padding: 10px 0; /* Adjust padding as needed */
+  }

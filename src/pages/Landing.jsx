@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/Landing.css";
-import { Hero, ProductElement } from "../components";
+import { Hero, Heroo, Herooo, ProductElement } from "../components";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -20,35 +20,37 @@ const Landing = () => {
   return (
     <main>
       <Hero />
+      <Heroo/>
 
-      <div className="selected-products">
+      <div className="selected-products topbar border-b border-gray-800">
         <h2 className="text-6xl text-center my-12 max-md:text-4xl text-accent-content">
-          Trending Products
+          Trending Now
         </h2>
         <div className="selected-products-grid max-w-7xl mx-auto">
           {products.map((product) => (
             <ProductElement
-                key={product._id}
-                id={product._id}
-                title={product.name}
-                image={product.imageUrl}
-                price={
-                  product.discount < 1 ? (
-                    <>
-                      <span style={{ textDecoration: 'line-through' }}>
-                        {product.price}
-                      </span>
-                      &nbsp;
-                      <span className="text-3xl text-error">₪{(product.price * product.discount).toFixed(2)}</span>
-                    </>
-                  ) : (
-                    `${product.price}`
-                  )
-                }
-              />
+              key={product._id}
+              id={product._id}
+              title={product.name}
+              image={product.imageUrl}
+              price={
+                product.discount < 1 ? (
+                  <>
+                    <span style={{ textDecoration: 'line-through' }}>
+                      {product.price}
+                    </span>
+                    &nbsp;
+                    <span className="text-3xl text-error">₪{(product.price * product.discount).toFixed(2)}</span>
+                  </>
+                ) : (
+                  `${product.price}`
+                )
+              }
+            />
           ))}
         </div>
       </div>
+      <Herooo/>
     </main>
   );
 };

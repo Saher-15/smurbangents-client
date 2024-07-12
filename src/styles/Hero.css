@@ -1,6 +1,42 @@
 .hero{
     height: 500px;
-    background-image: url("../assets/main banner 3.jpg");
+    background-image: url("../assets/urban-gent.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.heroo{
+    height: 600px;
+    background-image: url("../assets/t-shirt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.heroo1{
+    height: 600px;
+    background-image: url("../assets/polo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.heroo2{
+    height: 600px;
+    background-image: url("../assets/jeans.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.heroo3{
+    height: 600px;
+    background-image: url("../assets/pants.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

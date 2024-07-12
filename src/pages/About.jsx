@@ -34,7 +34,7 @@ const About = () => {
       <div className="call-to-action mt-12 text-center">
         <h3 className="text-3xl font-bold ">Ready to elevate your style?</h3>
         <p className="text-lg mb-5">Explore our latest collections and find your perfect look!</p>
-        <Link to="/shop?stock=true" className="btn btn-primary">Shop Now</Link>
+        <Link to="/shop?stock=true" className="btn btn-wide bg-blue-600 hover:bg-blue-500 text-white">Shop Now</Link>
       </div>
     </div>
   );
