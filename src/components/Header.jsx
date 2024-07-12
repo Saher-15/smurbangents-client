@@ -16,6 +16,7 @@ const Header = () => {
   // const { amount } = useSelector((state) => state.cart);
   const { total } = useSelector((state) => state.cart);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const [id, setId] = useState(localStorage.getItem("id"));
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Header = () => {
     setIsLoggedIn(loginState);
 
     // fetchWishlist();
+    setIsChecked(false); // Close the drawer when login state changes
 
   }, [loginState]);
 
@@ -141,8 +143,13 @@ const Header = () => {
 
       <div className="navbar-bottom-menu border-y border-gray-800">
         <div className="drawer">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
+          <input
+            id="my-drawer"
+            type="checkbox"
+            className="drawer-toggle"
+            checked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+          />          <div className="drawer-content">
 
             <label htmlFor="my-drawer" className="btn drawer-button">
               <HiMiniBars3BottomLeft className="text-4xl" />
@@ -152,46 +159,79 @@ const Header = () => {
             <label
               htmlFor="my-drawer"
               aria-label="close sidebar"
-              className="drawer-overlay"
-            ></label>
+              className={`drawer-overlay ${isChecked ? "block" : "hidden"}`}
+              onClick={() => setIsChecked(false)} // Close the drawer on click
+            >
+            </label>
 
-            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4">
-              <label htmlFor="my-drawer" className="btn drawer-button">
+            <ul
+              className={`menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4 ${isChecked ? "block" : "hidden"
+                }`}
+            >
+              <label
+                htmlFor="my-drawer"
+                className="btn drawer-button"
+                onClick={() => setIsChecked(false)} // Close the drawer on click
+              >
                 <FaWindowClose className="text-3xl ml-auto" />
               </label>
               {/* Sidebar content here */}
+              <br />
+              <br />
+              <br />
               <li className="text-xl">
-                <NavLink className="text-accent-content" to="/">
+                <NavLink
+                  className="text-accent-content"
+                  to="/"
+                  onClick={() => setIsChecked(false)} // Close the drawer on click
+                >
                   בית
                 </NavLink>
               </li>
               <li className="text-xl">
-                <NavLink className="text-accent-content" to="/shop?stock=true">
+                <NavLink
+                  className="text-accent-content"
+                  to="/shop?stock=true"
+                  onClick={() => setIsChecked(false)} // Close the drawer on click
+                >
                   חנות
                 </NavLink>
               </li>
               <li className="text-xl">
-                <NavLink className="text-accent-content" to="/about-us">
+                <NavLink
+                  className="text-accent-content"
+                  to="/about-us"
+                  onClick={() => setIsChecked(false)} // Close the drawer on click
+                >
                   אודות
                 </NavLink>
               </li>
-              <NavLink className="text-accent-content" to="/policy">
-                תקנון
-              </NavLink>
-              {/* <li className="text-xl">
-                <NavLink className="text-accent-content" to="/contact">
-                  Contact
+              <li className="text-xl">
+                <NavLink
+                  className="text-accent-content"
+                  to="/policy"
+                  onClick={() => setIsChecked(false)} // Close the drawer on click
+                >
+                  תקנון
                 </NavLink>
-              </li> */}
+              </li>
               {!isLoggedIn && (
                 <>
                   <li className="text-xl">
-                    <NavLink className="text-accent-content" to="/login">
+                    <NavLink
+                      className="text-accent-content"
+                      to="/login"
+                      onClick={() => setIsChecked(false)} // Close the drawer on click
+                    >
                       כניסה
                     </NavLink>
                   </li>
                   <li className="text-xl">
-                    <NavLink className="text-accent-content" to="/register">
+                    <NavLink
+                      className="text-accent-content"
+                      to="/register"
+                      onClick={() => setIsChecked(false)} // Close the drawer on click
+                    >
                       הרשמה
                     </NavLink>
                   </li>
@@ -201,30 +241,49 @@ const Header = () => {
           </div>
         </div>
 
-
-
         <div className="container text-2xl navlinks-container">
-          <NavLink className="text-accent-content" to="/">
+          <NavLink
+            className="text-accent-content"
+            to="/"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
             בית
           </NavLink>
-          <NavLink className="text-accent-content" to="/shop?stock=true">
+          <NavLink
+            className="text-accent-content"
+            to="/shop?stock=true"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
             חנות
           </NavLink>
-          <NavLink className="text-accent-content" to="/about-us">
+          <NavLink
+            className="text-accent-content"
+            to="/about-us"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
             אודות
           </NavLink>
-          <NavLink className="text-accent-content" to="/policy">
+          <NavLink
+            className="text-accent-content"
+            to="/policy"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
             תקנון
           </NavLink>
-          {/* <NavLink className="text-accent-content" to="/contact">
-            Contact
-          </NavLink> */}
           {!isLoggedIn && (
             <>
-              <NavLink className="text-accent-content" to="/login">
+              <NavLink
+                className="text-accent-content"
+                to="/login"
+                onClick={() => setIsChecked(false)} // Close the drawer on click
+              >
                 כניסה
               </NavLink>
-              <NavLink className="text-accent-content" to="/register">
+              <NavLink
+                className="text-accent-content"
+                to="/register"
+                onClick={() => setIsChecked(false)} // Close the drawer on click
+              >
                 הרשמה
               </NavLink>
             </>
