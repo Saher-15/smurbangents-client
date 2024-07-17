@@ -38,7 +38,7 @@ const OrderHistory = () => {
             </h1>
             <Link
               to="/shop?stock=true"
-              className="btn bg-blue-600 hover:bg-blue-500 text-white mt-10"
+              className="btn bg-blue-900 hover:bg-blue-700 text-white mt-10"
             >
               בצע את ההזמנה הראשונה שלך
             </Link>

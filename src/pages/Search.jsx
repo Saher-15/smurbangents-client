@@ -52,7 +52,7 @@ const Search = () => {
           />
           <button
             type="submit"
-            className="btn btn-square btn-lg bg-blue-600 hover:bg-blue-500 text-white"
+            className="btn btn-square btn-lg bg-blue-900 hover:bg-blue-700 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

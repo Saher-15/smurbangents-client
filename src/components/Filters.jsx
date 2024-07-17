@@ -56,11 +56,11 @@ const Filters = () => {
 
       <button
         type="submit"
-        className="btn bg-blue-600 hover:bg-blue-500 text-white btn-sm"
+        className="btn bg-blue-900 hover:bg-blue-700 text-white btn-sm"
       >
         search
       </button>
-      <Link to="/shop?stock=true" className="btn bg-blue-600 hover:bg-blue-500 text-white btn-sm">
+      <Link to="/shop?stock=true" className="btn bg-blue-900 hover:bg-blue-700 text-white btn-sm">
         reset
       </Link>
     </Form>

@@ -126,19 +126,19 @@ const CheckOut = () => {
 
     const getButtonText = () => {
         if (!formData.firstName || !formData.lastName || !formData.email || !formData.confirmEmail || !formData.phoneNumber || !formData.city || !formData.street) {
-            return 'Please fill in all fields';
+            return 'נא למלאות את כל השדות';
         } else if (formData.email !== formData.confirmEmail) {
-            return 'Emails do not match';
+            return 'מייל אינו תואם';
         } else if (!agreedToPolicy) {
-            return 'Accept the policy';
+            return 'אשר את המדיניות';
         } else {
-            return 'Complete Purchase';
+            return 'רכוש';
         }
     };
 
     return (
         <>
-            <SectionTitle title="Check Out" path="Cart | Check Out" />
+            <SectionTitle title="תשלום" path="עגלה | תשלום" />
             <div className="isolate px-6 lg:px-8">
                 <Form
                     action="#"
@@ -150,9 +150,9 @@ const CheckOut = () => {
                         <div>
                             <label
                                 htmlFor="firstName"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                First name
+                                שם פרטי
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -162,16 +162,16 @@ const CheckOut = () => {
                                     autoComplete="given-name"
                                     value={formData.firstName}
                                     onChange={handleChange}
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="text-right block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
                         <div>
                             <label
                                 htmlFor="lastName"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                Last name
+                                שם משפחה
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -181,16 +181,16 @@ const CheckOut = () => {
                                     autoComplete="family-name"
                                     value={formData.lastName}
                                     onChange={handleChange}
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="text-right block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
                         <div className="sm:col-span-2">
                             <label
                                 htmlFor="email"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                Email
+                                מייל
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -207,9 +207,9 @@ const CheckOut = () => {
                         <div className="sm:col-span-2">
                             <label
                                 htmlFor="confirmEmail"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                Confirmation email
+                                אימות מייל
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -228,9 +228,9 @@ const CheckOut = () => {
                         <div className="sm:col-span-2">
                             <label
                                 htmlFor="phoneNumber"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                Phone number
+                                טלפון
                             </label>
                             <div className="relative mt-2.5">
                                 <input
@@ -247,9 +247,9 @@ const CheckOut = () => {
                         <div>
                             <label
                                 htmlFor="city"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                City
+                                עיר
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -259,16 +259,16 @@ const CheckOut = () => {
                                     autoComplete="address-level2"
                                     value={formData.city}
                                     onChange={handleChange}
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="text-right block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
                         <div>
                             <label
                                 htmlFor="street"
-                                className="block text-sm font-semibold leading-6 text-accent-content"
+                                className="text-right block text-sm font-semibold leading-6 text-accent-content"
                             >
-                                Street
+                                רחוב
                             </label>
                             <div className="mt-2.5">
                                 <input
@@ -278,7 +278,7 @@ const CheckOut = () => {
                                     autoComplete="address-line1"
                                     value={formData.street}
                                     onChange={handleChange}
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="text-right block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -292,14 +292,14 @@ const CheckOut = () => {
                                 checked={agreedToPolicy}
                                 onChange={(e) => setAgreedToPolicy(e.target.checked)}
                             />
-                            <label htmlFor="agree-to-policy" className="text-sm">
-                                I agree to the <button className="text-blue-600 underline" onClick={() => navigate('/policy')}>Privacy Policy</button>
+                            <label htmlFor="agree-to-policy" className="text-sm ">
+                                אני מסכים <button className="text-blue-900 underline" onClick={() => navigate('/policy')}>Privacy Policy</button>
                             </label>
                         </div>
                         <button
                             type="submit"
                             className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm 
-                                ${isFormInvalid ? 'bg-red-600 hover:bg-red-500 opacity-50 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500'}
+                                ${isFormInvalid ? 'bg-red-600 hover:bg-red-500 opacity-50 cursor-not-allowed' : 'bg-blue-900 hover:bg-blue-700'}
                                 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                             disabled={isFormInvalid}
                         >

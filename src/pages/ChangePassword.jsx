@@ -103,7 +103,7 @@ const ChangePassword = () => {
                     </div>
                 </div>
                 <button
-                    className="btn btn-lg bg-blue-600 hover:bg-blue-500 text-white mt-10"
+                    className="btn btn-lg bg-blue-900 hover:bg-blue-700 text-white mt-10"
                     onClick={updateProfile}
                 >
                     שינוי סיסמה

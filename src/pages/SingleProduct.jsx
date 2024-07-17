@@ -173,7 +173,7 @@ const SingleProduct = () => {
           </div>
           <div className="flex flex-row gap-x-2 max-sm:flex-col max-sm:gap-x">
             <button
-              className={`btn ${isInCart ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-blue-600 hover:bg-blue-500 text-white'} ${!productData?.isInStock ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`btn ${isInCart ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-blue-900 hover:bg-blue-700 text-white'} ${!productData?.isInStock ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handleButtonClick}
               disabled={!productData?.isInStock}
             >
@@ -203,7 +203,7 @@ const SingleProduct = () => {
               </button>
             ) : (
               <button
-                className="btn bg-blue-600 hover:bg-blue-500 text-white"
+                className="btn bg-blue-900 hover:bg-blue-700 text-white"
                 onClick={() => {
                   if (loginState) {
                     addToWishlistHandler(product);

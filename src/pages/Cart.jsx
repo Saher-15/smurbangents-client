@@ -46,8 +46,8 @@ const Cart = () => {
           <CartTotals />
 
           <div className='card cart-totals-card'>
-            <div className='card-body'>
-              <h2 className="text-lg font-semibold">Delivery Options</h2>
+            <div className='text-right card-body'>
+              <h2 className="text-lg font-semibold">אפשרויות משלוח</h2>
 
               <div className="mb-4">
                 <input
@@ -57,7 +57,7 @@ const Cart = () => {
                   value="pickup"
                   onChange={handleDeliveryOptionChange}
                 />
-                <label htmlFor="pickup" className="ml-2">Pick up from store +0</label>
+                <label htmlFor="pickup" className="ml-2">איסוף מחנות +0</label>
               </div>
               <div className="mb-4">
                 <input
@@ -67,16 +67,16 @@ const Cart = () => {
                   value="other_area"
                   onChange={handleDeliveryOptionChange}
                 />
-                <label htmlFor="other_area" className="ml-2">With shipping +30</label>
+                <label htmlFor="other_area" className="ml-2">משלוח +30</label>
               </div>
             </div>
           </div>
           {loginState ? (
-            <button onClick={isCartEmpty} className='btn bg-blue-600 hover:bg-blue-500 text-white btn-block mt-8'>
+            <button onClick={isCartEmpty} className='btn bg-blue-900 hover:bg-blue-700 text-white btn-block mt-8'>
               הזמן עכשיו
             </button>
           ) : (
-            <Link to='/login' className='btn bg-blue-600 hover:bg-blue-500 btn-block text-white mt-8'>
+            <Link to='/login' className='btn bg-blue-900 hover:bg-blue-700 btn-block text-white mt-8'>
               התחבר
             </Link>
           )}

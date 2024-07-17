@@ -95,7 +95,7 @@ const Header = () => {
                 <div className="card-actions">
                   <Link
                     to="/cart"
-                    className="btn bg-blue-600 btn-block text-white hover:bg-blue-500 text-base-content"
+                    className="btn bg-blue-900 btn-block text-white hover:bg-blue-700 text-base-content"
                   >
                     צפה בסל הקניות
                   </Link>

@@ -141,13 +141,13 @@ const Profile = () => {
 
         </div>
         <button
-          className="btn btn-lg bg-blue-600 hover:bg-blue-500 text-white mt-10"
+          className="btn btn-lg bg-blue-900 hover:bg-blue-700 text-white mt-10"
           type="submit"
         >
           עדכון פרופיל
         </button>
         <button
-          className="btn btn-lg bg-blue-600 hover:bg-blue-500 text-white mt-5"
+          className="btn btn-lg bg-blue-900 hover:bg-blue-700 text-white mt-5"
           onClick={navigateToChangePassword} // Call navigateToChangePassword when clicked
         >
           שינוי סיסמה
