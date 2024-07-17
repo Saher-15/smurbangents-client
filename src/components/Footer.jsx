@@ -60,7 +60,7 @@ const Footer = () => {
       <nav>
         <div className="grid grid-flow-col gap-4">
           <FaInstagram
-            className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer text-white hover:text-blue-500"
+            className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer text-white hover:text-red-500"
             onClick={handleClickInsta}
           />
           <FaWhatsapp
