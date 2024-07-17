@@ -220,19 +220,19 @@ const Header = () => {
                   <li className="text-xl">
                     <NavLink
                       className="text-accent-content"
-                      to="/login"
+                      to="/register"
                       onClick={() => setIsChecked(false)} // Close the drawer on click
                     >
-                      כניסה
+                      הרשמה
                     </NavLink>
                   </li>
                   <li className="text-xl">
                     <NavLink
                       className="text-accent-content"
-                      to="/register"
+                      to="/login"
                       onClick={() => setIsChecked(false)} // Close the drawer on click
                     >
-                      הרשמה
+                      כניסה
                     </NavLink>
                   </li>
                 </>
@@ -242,34 +242,7 @@ const Header = () => {
         </div>
 
         <div className="container text-2xl navlinks-container">
-          <NavLink
-            className="text-accent-content"
-            to="/"
-            onClick={() => setIsChecked(false)} // Close the drawer on click
-          >
-            בית
-          </NavLink>
-          <NavLink
-            className="text-accent-content"
-            to="/shop?stock=true"
-            onClick={() => setIsChecked(false)} // Close the drawer on click
-          >
-            חנות
-          </NavLink>
-          <NavLink
-            className="text-accent-content"
-            to="/about-us"
-            onClick={() => setIsChecked(false)} // Close the drawer on click
-          >
-            אודות
-          </NavLink>
-          <NavLink
-            className="text-accent-content"
-            to="/policy"
-            onClick={() => setIsChecked(false)} // Close the drawer on click
-          >
-            תקנון
-          </NavLink>
+
           {!isLoggedIn && (
             <>
               <NavLink
@@ -288,8 +261,35 @@ const Header = () => {
               </NavLink>
             </>
           )}
+          <NavLink
+            className="text-accent-content"
+            to="/policy"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
+            תקנון
+          </NavLink>
+          <NavLink
+            className="text-accent-content"
+            to="/about-us"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
+            אודות
+          </NavLink>
+          <NavLink
+            className="text-accent-content"
+            to="/shop?stock=true"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
+            חנות
+          </NavLink>
+          <NavLink
+            className="text-accent-content"
+            to="/"
+            onClick={() => setIsChecked(false)} // Close the drawer on click
+          >
+            בית
+          </NavLink>
         </div>
-
       </div>
 
     </>
