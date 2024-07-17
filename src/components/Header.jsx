@@ -60,7 +60,7 @@ const Header = () => {
             >
               <label className="btn btn-ghost btn-circle avatar">
                 <div>
-                  <FaHeart className="h-6 w-7 text-white" />
+                <FaHeart className="h-6 w-7 text-white" />
                 </div>
               </label>
             </Link>
