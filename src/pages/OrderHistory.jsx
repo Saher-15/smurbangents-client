@@ -9,7 +9,7 @@ import { useLoaderData } from "react-router-dom";
 
 
 export const orderHistoryLoader = async () => {
-  const response = await axios.get(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/get_orders/${localStorage.getItem("id")}`);
+  const response = await axios.get(`https://urbangents-1ee96bbd7b88.herokuapp.com/user/get_orders/${localStorage.getItem("id")}`);
   return { orderHistory: response.data };
 };
 

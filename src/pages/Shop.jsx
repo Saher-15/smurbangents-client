@@ -27,7 +27,7 @@ export const shopLoader = async ({ request }) => {
     in_stock: params.stock === undefined ? false : true,
     current_page: Number(params.page) || 1
   };
-  const itemsPerPage = 12;
+  const itemsPerPage = 20;
 
   function buildUrl(category, sort_by, max_price, is_in_stock) {
     let string;
@@ -63,7 +63,7 @@ export const shopLoader = async ({ request }) => {
   try {
     const url = buildUrl(filterObj.category, filterObj.order, filterObj.price, filterObj.in_stock)
     const response = await axios.get(
-      `https://siwarafashion-server-59dda37c29fa.herokuapp.com/product/getNProducts?page=${filterObj.current_page}&size=${itemsPerPage}${url}`
+      `https://urbangents-1ee96bbd7b88.herokuapp.com/product/getNProducts?page=${filterObj.current_page}&size=${itemsPerPage}${url}`
 
     );
     let data = response.data.data;

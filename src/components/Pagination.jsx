@@ -37,7 +37,7 @@ const Pagination = () => {
           className="join-item btn text-4xl flex justify-center"
           onClick={() => {
 
-            if(productsLoaderData.productsLength < 12){
+            if(productsLoaderData.productsLength < 20){
               return;
             }
 

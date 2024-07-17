@@ -31,7 +31,7 @@ const SearchPagination = ({
           <button
             className="join-item btn text-4xl flex justify-center"
             onClick={() => {
-              if (products.length < 12) {
+              if (products.length < 20) {
                 return;
               }
 

@@ -33,7 +33,7 @@ const CheckOut = () => {
 
     const createPaymentGrowApi = async () => {
         try {
-            const response = await axios.post(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/payment/createPayment`, {
+            const response = await axios.post(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/createPayment`, {
                 fullName: formData.firstName + " " + formData.lastName,
                 phone: formData.phoneNumber,
                 email: formData.email,
@@ -65,7 +65,7 @@ const CheckOut = () => {
 
     const handlePaymentWindowClosed = async (processId, processToken) => {
         try {
-            const response = await axios.get(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/payment/status`, {
+            const response = await axios.get(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/status`, {
                 params: {
                     processId,
                     processToken

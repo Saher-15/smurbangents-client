@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 
 export const singleProductLoader = async ({ params }) => {
   const { id } = params;
-  const response = await axios(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/product/getProduct/${id}`);
+  const response = await axios(`https://urbangents-1ee96bbd7b88.herokuapp.com/product/getProduct/${id}`);
   return { productData: response.data };
 };
 
@@ -36,7 +36,7 @@ const SingleProduct = () => {
   async function isProductInWishlist() {
     try {
       const getResponse = await axios.get(
-        `https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/get_wishlist/${localStorage.getItem("id")}`
+        `https://urbangents-1ee96bbd7b88.herokuapp.com/user/get_wishlist/${localStorage.getItem("id")}`
       );
       const data = getResponse.data;
 
@@ -73,7 +73,7 @@ const SingleProduct = () => {
       // If product is not in wishlist, add it
       if (!product.isInWishList) {
         await axios.patch(
-          `https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/add_to_wishlist/${localStorage.getItem("id")}`,
+          `https://urbangents-1ee96bbd7b88.herokuapp.com/user/add_to_wishlist/${localStorage.getItem("id")}`,
           product
         );
         toast.success("Product added to the wishlist!");
@@ -92,7 +92,7 @@ const SingleProduct = () => {
       // If product is in wishlist, remove it
       if (product.isInWishList) {
         await axios.delete(
-          `https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/remove_item_from_wishlist/${localStorage.getItem("id")}/${product.id}`,
+          `https://urbangents-1ee96bbd7b88.herokuapp.com/user/remove_item_from_wishlist/${localStorage.getItem("id")}/${product.id}`,
         );
         toast.success("Product removed from the wishlist!");
         setProduct({

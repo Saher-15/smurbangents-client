@@ -16,7 +16,7 @@ const Login = () => {
   const proceedLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://siwarafashion-server-59dda37c29fa.herokuapp.com/auth/login", {
+      const response = await axios.post("https://urbangents-1ee96bbd7b88.herokuapp.com/auth/login", {
         email,
         password
       });

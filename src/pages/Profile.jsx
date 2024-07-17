@@ -37,7 +37,7 @@ const Profile = () => {
     console.log(userFormData);
     try {
       // Make an HTTP request to update user profile
-      const response = await axios.patch(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/update_user_info/${localStorage.getItem("id")}`, userFormData);
+      const response = await axios.patch(`https://urbangents-1ee96bbd7b88.herokuapp.com/user/update_user_info/${localStorage.getItem("id")}`, userFormData);
 
       // Update local storage with the new user data
       localStorage.setItem("user_Data", JSON.stringify(userFormData));

@@ -42,7 +42,7 @@ const ChangePassword = () => {
             };
 
             // Make an HTTP request to update user password
-            await axios.patch(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/change_password/${localStorage.getItem("id")}`, requestData, {
+            await axios.patch(`https://urbangents-1ee96bbd7b88.herokuapp.com/user/change_password/${localStorage.getItem("id")}`, requestData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

@@ -25,7 +25,7 @@ const ThankYou = () => {
   const createNewOrder = async () => {
     try {
 
-      const response = await axios.post(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/order/new_order/${localStorage.getItem("id")}`, {
+      const response = await axios.post(`https://urbangents-1ee96bbd7b88.herokuapp.com/order/new_order/${localStorage.getItem("id")}`, {
         street: street,
         city: city,
         shippingCost: shipping,

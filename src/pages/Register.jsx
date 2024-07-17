@@ -69,7 +69,7 @@ const Register = () => {
     if (isValidate()) {
       try {
         const registrationResponse = await axios.post(
-          "https://siwarafashion-server-59dda37c29fa.herokuapp.com/auth/register",
+          "https://urbangents-1ee96bbd7b88.herokuapp.com/auth/register",
           regObj
         );
 

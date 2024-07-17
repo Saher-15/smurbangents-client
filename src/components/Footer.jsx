@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 import { TbBrandGoogleMaps } from "react-icons/tb";
 import { useSelector } from "react-redux";
 import { FaHeadphones } from "react-icons/fa6";
@@ -9,11 +11,15 @@ import "../styles/Footer.css";
 const Footer = () => {
 
   const handleClickInsta = () => {
-    window.open('https://www.instagram.com/siwarafashion?igsh=bnpvOGo0aWkybHly', '_blank');
+    window.open('https://www.instagram.com/urbangents.fashion/', '_blank');
   };
 
   const handleClickMap = () => {
     window.open('https://www.google.com/maps?q=32.699356,35.300732', '_blank');
+  };
+
+  const handleClickWhatsapp = () => {
+    window.open('https://api.whatsapp.com/send?phone=+972504368748', '_blank');
   };
 
   const loginState = useSelector((state) => state.auth.isLoggedIn);
@@ -51,18 +57,18 @@ const Footer = () => {
         )}
       </nav>
 
-      {/* <nav>
+      <nav>
         <div className="grid grid-flow-col gap-4">
           <FaInstagram
             className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer hover:text-blue-500"
             onClick={handleClickInsta}
           />
-          <TbBrandGoogleMaps
-            className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer hover:text-red-500"
-            onClick={handleClickMap}
+          <FaWhatsapp
+            className="text-6xl max-sm:text-4xl text-accent-content cursor-pointer hover:text-green-500"
+            onClick={handleClickWhatsapp}
           />
         </div>
-      </nav> */}
+      </nav>
 
       <div className="topbar border-b border-gray-800">
         <ul>

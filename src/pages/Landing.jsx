@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const landingLoader = async () => {
   const response = await axios.get(
-    `https://siwarafashion-server-59dda37c29fa.herokuapp.com/product/get_trending_products`
+    `https://urbangents-1ee96bbd7b88.herokuapp.com/product/get_trending_products`
   );
   const data = response.data;
 

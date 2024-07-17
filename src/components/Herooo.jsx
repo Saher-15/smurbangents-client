@@ -13,8 +13,8 @@ const Herooo = () => {
                         </div>
                         <div className="flex items-center justify-center">
                             <div className="max-w-xl text-center">
-                                <h1 className="text-4xl md:text-6xl font-bold text-accent-content">T-Shirts</h1>
-                                <p className="py-6 text-lg md:text-2xl text-accent-content">
+                                <h1 className="text-4xl md:text-6xl font-bold text-accent-content text-white">T-Shirts</h1>
+                                <p className="py-6 text-lg md:text-2xl text-accent-content text-white">
                                     חולצות הטי שכולם רוצים בקיץ!
                                 </p>
                                 <Link to="/shop?stock=true&category=T-Shirts" className="btn btn-wide bg-white text-black border border-black hover:font-bold hover:border-2">קנה עכשיו</Link>
@@ -27,8 +27,8 @@ const Herooo = () => {
                         </div>
                         <div className="flex items-center justify-center">
                             <div className="max-w-xl text-center">
-                                <h1 className="text-4xl md:text-6xl font-bold text-accent-content">Polo-Shirts</h1>
-                                <p className="py-6 text-lg md:text-2xl text-accent-content">
+                                <h1 className="text-4xl md:text-6xl font-bold text-accent-content text-white">Polo-Shirts</h1>
+                                <p className="py-6 text-lg md:text-2xl text-accent-content text-white">
                                     חולצות הטי שכולם רוצים בקיץ!
                                 </p>
                                 <Link to="/shop?stock=true&category=Shirts" className="btn btn-wide bg-white text-black border border-black hover:font-bold hover:border-2">קנה עכשיו</Link>

@@ -4,7 +4,7 @@ import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 export const wishListLoader = async () => {
-  const response = await axios.get(`https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/get_wishlist/${localStorage.getItem("id")}`);
+  const response = await axios.get(`https://urbangents-1ee96bbd7b88.herokuapp.com/user/get_wishlist/${localStorage.getItem("id")}`);
   return { wishItems: response.data };
 };
 
@@ -15,7 +15,7 @@ const Wishlist = () => {
   const removeFromWishlistHandler = async (product) => {
     try {
       await axios.delete(
-        `https://siwarafashion-server-59dda37c29fa.herokuapp.com/user/remove_item_from_wishlist/${localStorage.getItem("id")}/${product.id}`
+        `https://urbangents-1ee96bbd7b88.herokuapp.com/user/remove_item_from_wishlist/${localStorage.getItem("id")}/${product.id}`
       );
       setWishList(wishList.filter(item => item.id !== product.id)); // Remove the item from the wishlist
     } catch (error) {
