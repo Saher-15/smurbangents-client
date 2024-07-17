@@ -19,7 +19,7 @@ const Filters = () => {
 
   return (
     <Form className="bg-base-500 rounded-md px-8 py-4 grid gap-x-4  gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
-      
+
       <FormSelect
         label="בחר קטיגוריה"
         name="category"
@@ -61,7 +61,7 @@ const Filters = () => {
         חיפוש
       </button>
       <Link to="/shop?stock=true" className="btn bg-blue-900 hover:bg-blue-700 text-white btn-sm">
-      איפוס
+        איפוס
       </Link>
     </Form>
   );
