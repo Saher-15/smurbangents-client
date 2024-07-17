@@ -7,7 +7,7 @@ import FormCheckbox from "./FormCheckbox";
 
 const Filters = () => {
   const [selectCategoryList, setSelectCategoryList] = useState([
-    "all",
+    "הכל",
     "Jeans",
     "Jackets",
     "Pants",
@@ -21,7 +21,7 @@ const Filters = () => {
     <Form className="bg-base-500 rounded-md px-8 py-4 grid gap-x-4  gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
       
       <FormSelect
-        label="select category"
+        label="בחר קטיגוריה"
         name="category"
         list={selectCategoryList}
         size="select-sm"
@@ -30,9 +30,9 @@ const Filters = () => {
 
       {/* ORDER */}
       <FormSelect
-        label="sort by"
+        label="סינון לפי"
         name="order"
-        list={["none", "price : high to low", "price : low to high"]}
+        list={["רגיל", "מחיר : מגבוה לנמוך", "מחיר : מנמוך לגבוה"]}
         size="select-sm"
         defaultValue="a-z"
       />
@@ -40,14 +40,14 @@ const Filters = () => {
       {/* PRICE */}
       <FormRange
         name="price"
-        label="select price"
+        label="בחר מחיר"
         size="range-sm"
         price={1000}
       />
 
       {/* In stock */}
       <FormCheckbox
-        label="Only products in stock"
+        label="רק מוצרים במלאי"
         name="stock"
         defaultValue="true"
       />
@@ -58,10 +58,10 @@ const Filters = () => {
         type="submit"
         className="btn bg-blue-900 hover:bg-blue-700 text-white btn-sm"
       >
-        search
+        חיפוש
       </button>
       <Link to="/shop?stock=true" className="btn bg-blue-900 hover:bg-blue-700 text-white btn-sm">
-        reset
+      איפוס
       </Link>
     </Form>
   );
