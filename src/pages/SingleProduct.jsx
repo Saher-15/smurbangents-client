@@ -113,7 +113,7 @@ const SingleProduct = () => {
       if (isInCart) {
         dispatch(removeItem(product.id));
       }
-      else if (!size || size === "Pick your size") {
+      else if (!size || size === "בחר את המידה שלך") {
         toast.error("Please select a valid size before adding to the cart");
       }
       else {
@@ -173,7 +173,7 @@ const SingleProduct = () => {
           </div>
           <div className="flex flex-row gap-x-2 max-sm:flex-col max-sm:gap-x">
             <button
-              className={`btn bg-blue-600 hover:bg-blue-500 text-white ${!productData?.isInStock ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`btn ${isInCart ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-blue-600 hover:bg-blue-500 text-white'} ${!productData?.isInStock ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handleButtonClick}
               disabled={!productData?.isInStock}
             >
@@ -187,7 +187,7 @@ const SingleProduct = () => {
 
             {product?.isInWishList ? (
               <button
-                className="btn bg-blue-600 hover:bg-blue-500 text-white"
+                className="btn bg-red-600 hover:bg-red-500 text-white"
                 onClick={() => {
                   if (loginState) {
                     removeFromWishlistHandler(product);
