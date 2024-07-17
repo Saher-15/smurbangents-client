@@ -31,56 +31,56 @@ const CheckOut = () => {
         }
     }, [paymentWindow]);
 
-    const createPaymentGrowApi = async () => {
-        try {
-            const response = await axios.post(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/createPayment`, {
-                fullName: formData.firstName + " " + formData.lastName,
-                phone: formData.phoneNumber,
-                email: formData.email,
-                sum: total * 0.9 + shipping
-            });
+    // const createPaymentGrowApi = async () => {
+    //     try {
+    //         const response = await axios.post(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/createPayment`, {
+    //             fullName: formData.firstName + " " + formData.lastName,
+    //             phone: formData.phoneNumber,
+    //             email: formData.email,
+    //             sum: total * 0.9 + shipping
+    //         });
 
-            if (response.data.err) {
-                toast.error(response.data.err.message);
-                return;
-            }
+    //         if (response.data.err) {
+    //             toast.error(response.data.err.message);
+    //             return;
+    //         }
 
-            const paymentUrl = response.data.data.url;
-            const processId = response.data.data.processId;
-            const processToken = response.data.data.processToken;
+    //         const paymentUrl = response.data.data.url;
+    //         const processId = response.data.data.processId;
+    //         const processToken = response.data.data.processToken;
 
-            const newWindow = window.open(paymentUrl);
-            setPaymentWindow(newWindow);
+    //         const newWindow = window.open(paymentUrl);
+    //         setPaymentWindow(newWindow);
 
-            const windowCheckInterval = setInterval(() => {
-                if (newWindow.closed) {
-                    clearInterval(windowCheckInterval);
-                    handlePaymentWindowClosed(processId, processToken);
-                }
-            }, 1000);
-        } catch (error) {
-            toast.error('Error creating payment. Please try again.');
-        }
-    };
+    //         const windowCheckInterval = setInterval(() => {
+    //             if (newWindow.closed) {
+    //                 clearInterval(windowCheckInterval);
+    //                 handlePaymentWindowClosed(processId, processToken);
+    //             }
+    //         }, 1000);
+    //     } catch (error) {
+    //         toast.error('Error creating payment. Please try again.');
+    //     }
+    // };
 
-    const handlePaymentWindowClosed = async (processId, processToken) => {
-        try {
-            const response = await axios.get(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/status`, {
-                params: {
-                    processId,
-                    processToken
-                }
-            });
+    // const handlePaymentWindowClosed = async (processId, processToken) => {
+    //     try {
+    //         const response = await axios.get(`https://urbangents-1ee96bbd7b88.herokuapp.com/payment/status`, {
+    //             params: {
+    //                 processId,
+    //                 processToken
+    //             }
+    //         });
 
-            if (response.data === true) {
-                navigate(`/thank-you?firstName=${formData.firstName}&lastName=${formData.lastName}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&city=${formData.city}&street=${formData.street}`);
-            } else {
-                toast.error('Payment failed. Please try again.');
-            }
-        } catch (error) {
-            toast.error('Error checking payment status. Please try again.');
-        }
-    };
+    //         if (response.data === true) {
+    //             navigate(`/thank-you?firstName=${formData.firstName}&lastName=${formData.lastName}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&city=${formData.city}&street=${formData.street}`);
+    //         } else {
+    //             toast.error('Payment failed. Please try again.');
+    //         }
+    //     } catch (error) {
+    //         toast.error('Error checking payment status. Please try again.');
+    //     }
+    // };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -109,7 +109,9 @@ const CheckOut = () => {
             return;
         }
 
-        createPaymentGrowApi();
+        navigate(`/thank-you?firstName=${formData.firstName}&lastName=${formData.lastName}&email=${formData.email}&phoneNumber=${formData.phoneNumber}&city=${formData.city}&street=${formData.street}`);
+
+        // createPaymentGrowApi();
     };
 
     const isFormInvalid = !formData.firstName ||

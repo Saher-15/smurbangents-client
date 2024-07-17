@@ -29,7 +29,7 @@ const ThankYou = () => {
         street: street,
         city: city,
         shippingCost: shipping,
-        subtotal: total * 0.9,
+        subtotal: total,
         cartItems: cartItems,
       });
 
