@@ -293,7 +293,7 @@ const CheckOut = () => {
                                 onChange={(e) => setAgreedToPolicy(e.target.checked)}
                             />
                             <label htmlFor="agree-to-policy" className="text-sm ">
-                                אני מסכים <button className="text-blue-900 underline" onClick={() => navigate('/policy')}>Privacy Policy</button>
+                                אני מסכים <button className="text-blue-900 underline" onClick={() => navigate('/policy')}>תקנון</button>
                             </label>
                         </div>
                         <button

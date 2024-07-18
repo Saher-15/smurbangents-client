@@ -60,7 +60,7 @@ const Header = () => {
             >
               <label className="btn btn-ghost btn-circle avatar">
                 <div>
-                <FaHeart className="h-6 w-7 text-white" />
+                  <FaHeart className="h-6 w-7 text-white" />
                 </div>
               </label>
             </Link>
@@ -150,10 +150,10 @@ const Header = () => {
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
           />          <div className="drawer-content">
-
             <label htmlFor="my-drawer" className="btn drawer-button">
               <HiMiniBars3BottomLeft className="text-4xl" />
             </label>
+
           </div>
           <div className="drawer-side z-10">
             <label
@@ -168,17 +168,15 @@ const Header = () => {
               className={`menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4 ${isChecked ? "block" : "hidden"
                 }`}
             >
-              <label
-                htmlFor="my-drawer"
-                className="btn drawer-button"
-                onClick={() => setIsChecked(false)} // Close the drawer on click
-              >
-                <FaWindowClose className="text-3xl ml-auto" />
-              </label>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <div className="flex justify-start">
+                <FaWindowClose className="text-3xl cursor-pointer" onClick={() => setIsChecked(false)} />
+              </div>
               {/* Sidebar content here */}
-              <br />
-              <br />
-              <br />
               <li className="text-xl">
                 <NavLink
                   className="text-accent-content"

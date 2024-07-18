@@ -127,7 +127,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <SectionTitle title="דף מוצר" path="בית | חנות | דף מוצר" />
+      <SectionTitle title="דף המוצר" path="בית | חנות | דף המוצר" />
       <div className="topbar border-b border-gray-800 grid grid-cols-2 max-w-7xl mx-auto mt-5 max-lg:grid-cols-1 max-lg:mx-5">
         <div className="product-images flex flex-col justify-center max-lg:justify-start">
           <img
